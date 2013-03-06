@@ -341,14 +341,11 @@ NetSocketPP::ServerFunctionArgs& serverMain(NetSocketPP::ServerFunctionArgs args
 int main() {
 cout << "Phitherek_' s SimpleCom v. 0.1 Server (C) 2013 by Phitherek_" << endl;
 cout << "Powered by NetSocket++ v. 0.1 (C) 2012-2013 by Phitherek_" << endl;
-string hostname;
-cout << "Hostname or IP to bind to: ";
-cin >> hostname;
 string port;
 cout << "Enter port: ";
 cin >> port;
 	try {
-	NetSocketPP::ServerSocket srv(hostname, port, "TCP");
+	NetSocketPP::ServerSocket srv("0.0.0.0", port, "TCP");
 	NetSocketPP::ServerFunctionArgs inargs;
 	NetSocketPP::ServerFunctionArgs outargs;
 	time_t tt;
