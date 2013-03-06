@@ -39,16 +39,16 @@ return "8";
 return "9";	
 }
 int k = 1;
-cout << "DEBUG: k: " << k << endl;
+//cout << "DEBUG: k: " << k << endl;
 while(i/k != 0) {
 k *= 10;
 }
-cout << "DEBUG: k: " << k << endl;
+//cout << "DEBUG: k: " << k << endl;
 string s;
 while(k > 1) {
 k /= 10;
 int p = i/k;
-cout << "DEBUG: p: " << p << endl;
+//cout << "DEBUG: p: " << p << endl;
 if(p == 0) {
 s += "0";	
 } else if(p == 1) {
@@ -341,11 +341,14 @@ NetSocketPP::ServerFunctionArgs& serverMain(NetSocketPP::ServerFunctionArgs args
 int main() {
 cout << "Phitherek_' s SimpleCom v. 0.1 Server (C) 2013 by Phitherek_" << endl;
 cout << "Powered by NetSocket++ v. 0.1 (C) 2012-2013 by Phitherek_" << endl;
+string hostname;
+cout << "Hostname or IP to bind to: ";
+cin >> hostname;
 string port;
 cout << "Enter port: ";
 cin >> port;
 	try {
-	NetSocketPP::ServerSocket srv("0.0.0.0", port, "TCP");
+	NetSocketPP::ServerSocket srv(hostname, port, "TCP");
 	NetSocketPP::ServerFunctionArgs inargs;
 	NetSocketPP::ServerFunctionArgs outargs;
 	time_t tt;
