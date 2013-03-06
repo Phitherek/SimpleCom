@@ -345,7 +345,7 @@ string port;
 cout << "Enter port: ";
 cin >> port;
 	try {
-	NetSocketPP::ServerSocket srv("localhost", port, "TCP");
+	NetSocketPP::ServerSocket srv("0.0.0.0", port, "TCP");
 	NetSocketPP::ServerFunctionArgs inargs;
 	NetSocketPP::ServerFunctionArgs outargs;
 	time_t tt;
