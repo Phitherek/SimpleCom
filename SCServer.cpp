@@ -16,62 +16,27 @@ if(s[i] != '\n' && s[i] != '\r') {
 return r;
 }
 
-string int_to_string(int i) {
-if(i == 0) {
-return "0";	
-} else if(i == 1) {
-return "1";	
-} else if(i == 2) {
-return "2";	
-} else if(i == 3) {
-return "3";
-} else if(i == 4) {
-return "4";	
-} else if(i == 5) {
-return "5";
-} else if(i == 6) {
-return "6";
-} else if(i == 7) {
-return "7";	
-} else if(i == 8) {
-return "8";	
-} else if(i == 9) {
-return "9";	
+char int_to_char(int i) {
+	return i+48;
 }
+
+string int_to_string(int i) {
 int k = 1;
 //cout << "DEBUG: k: " << k << endl;
 while(i/k != 0) {
 k *= 10;
 }
 //cout << "DEBUG: k: " << k << endl;
-string s;
+string s="";
 while(k > 1) {
 k /= 10;
 int p = i/k;
 //cout << "DEBUG: p: " << p << endl;
-if(p == 0) {
-s += "0";	
-} else if(p == 1) {
-s += "1";	
-} else if(p == 2) {
-s += "2";	
-} else if(p == 3) {
-s += "3";
-} else if(p == 4) {
-s += "4";	
-} else if(p == 5) {
-s += "5";
-} else if(p == 6) {
-s += "6";
-} else if(p == 7) {
-s += "7";	
-} else if(p == 8) {
-s += "8";	
-} else if(p == 9) {
-s += "9";	
-}
+s += int_to_char(p);
 i -= k*p;
 }
+//cout << "DEBUG: s: " << s << endl;
+return s;
 }
 
 int file_write(string filename, string msg) {
